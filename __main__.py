@@ -10,6 +10,7 @@ def repos(profiles):
            for repo, t in repos.iteritems()]
     
 Profiles().map(repos).show('table',
+                           id='repos',
                            size=(12, 6),
                            json_export=True)
         
