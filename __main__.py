@@ -6,7 +6,7 @@ def repos(profiles):
     for profile in profiles:
         for repo in profile['repos']:
             repos[repo] = random.randint(0, 3)
-    yield [{'repo': repo, 'badge': 'trending-badge%d.png' % t}
+    yield [{'repo': repo, 'badge': 'trending_badge%d.png' % t}
            for repo, t in repos.items() + [('!default', 0)]]
     
 Profiles().map(repos).show('table',
