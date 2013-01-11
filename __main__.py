@@ -26,10 +26,13 @@ def weekly_uniques(profiles):
                 yield days / 7
             else:
                 break
+    num_profiles = 0
     for profile in profiles:
+        num_profiles += 1
         for repo, visits in profile['repos'].items():
             for week, hits in groupby(weekly_visits(visits)):
                 yield repo, week
+    text['num_profiles'] = num_profiles
                    
 def trending(profiles):
     weekstats = (Counter(), Counter())
@@ -70,6 +73,10 @@ Profiles().map(table).show('table',
 
 Title("**{num_repos}** badges installed", text)
 
-Description("The number of badges has {change.verb} by {change} "
-            "compared to the past week.", text)
+Description("""
+The number of badges has {change.verb} by {change} 
+cmpared to the past week.
+
+The total number of visitors is now {num_profiles}.
+""", text)
     
