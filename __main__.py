@@ -75,7 +75,7 @@ Title("**{num_repos}** badges installed", text)
 
 Description("""
 The number of badges has {change.verb} by {change} 
-cmpared to the past week.
+compared to the past week.
 
 The total number of visitors is now {num_profiles}.
 """, text)
